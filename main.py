@@ -1,14 +1,9 @@
-import requests
 import vk_api
 import time
-import json
-import urllib.request
 import telebot
 import io
 
 ##############################################
-###DO NOT EDIT ANYTHING BUT THESE VARIABLES###
-#НИЧЕГО НЕ РЕДАКТИРОВАТЬ КРОМЕ ЭТИX ЗНАЧЕНИЙ#
 bot_token=''###str### Token of vk page.
 vk_community_id=-1###int### ID of community
 vk_token=''###str### Token of vk page
@@ -67,3 +62,4 @@ while True:
             send_message_to_channel(post_text=post_text)
         
         post_count_before+=1
+        time.sleep(180)
