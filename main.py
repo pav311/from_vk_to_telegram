@@ -25,7 +25,6 @@ post_count_before = vk.wall.get(owner_id=vk_community_id).get("count")
 def send_message_to_channel(post_text):
     url = "https://api.telegram.org/bot{}/sendMessage".format(bot_token)
     data = {'chat_id' : "@sdp_dl", "text" : post_text}
-    #text={"text":"123"}
     r= requests.post(url,data=data)
     return r
 
@@ -36,7 +35,6 @@ def send_photo_to_channel(img_url,post_text=""):
     photo.name = 'img.png'
     files = {'photo': photo}
     data = {'chat_id' : "@sdp_dl", "caption" : post_text}
-    #text={"text":"123"}
     r= requests.post(url, files=files, data=data)
     return r
 
