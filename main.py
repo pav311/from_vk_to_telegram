@@ -2,17 +2,15 @@ import vk_api
 import time
 import telebot
 import io
-
+import requests
 
 bot_token=''
-vk_community_id=-1
+vk_community_id=-
 vk_token=''
-telegram_id_channel=''
+telegram_id_channel='@'
 
 
 vk_session = vk_api.VkApi(token=vk_token)
-bot = telebot.TeleBot(bot_token)
-
 vk = vk_session.get_api()
 
 post_count_before = vk.wall.get(owner_id=vk_community_id).get("count")
@@ -53,7 +51,7 @@ while True:
                 img_url=(vk.wall.get(owner_id=vk_community_id).get("items")[0].get("attachments")[0].get("photo").get("sizes")[-1].get("url"))
                 post_text=(vk.wall.get(owner_id=vk_community_id).get("items")[0].get("text"))
             send_photo_to_channel(img_url=img_url,post_text=post_text)
-
+    
 
         elif vk.wall.get(owner_id=vk_community_id).get("items")[1].get("attachments")==None:
             last_post = vk.wall.get(owner_id=vk_community_id).get("items")[0].get("is_pinned")
