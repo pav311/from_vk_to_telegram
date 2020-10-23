@@ -64,4 +64,4 @@ while True:
             send_message_to_channel(post_text=post_text)
         
         post_count_before+=1
-        time.sleep(180)
+    time.sleep(180)
